@@ -1,0 +1,7 @@
+{
+  "name": "RCP",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
