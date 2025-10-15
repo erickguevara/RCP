@@ -7,7 +7,12 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab3Page {
-
+   cultivos = [
+    { nombre: 'Descripcion', tipo: 'Cultivo', tiempo: '5 días' },
+    { nombre: 'Cultivo 01', tipo: 'arroz', tiempo: '10 días' },
+    { nombre: 'cultivo 02', tipo: 'maiz', tiempo: '1 mes' },
+    { nombre: 'cultivo 3', tipo: 'cerezas', tiempo: '2 meses' },
+  ];
   constructor() {}
 
 }

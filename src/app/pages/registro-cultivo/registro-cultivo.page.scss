@@ -1,0 +1,76 @@
+.input-list {
+    padding-top: 20px;
+}
+
+.aplicaciones-box {
+    margin-top: 16px;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+}
+
+.aplicaciones-box h3 {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.add-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+
+.footer-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.btn-primary {
+    --background: #3b82f6;
+    --color: #fff;
+}
+
+.btn-secondary {
+    --background: #6366f1;
+    --color: #fff;
+}
+
+ion-modal#example-modal {
+  --width: fit-content;
+  --min-width: 350px;
+  --height: fit-content;
+  --border-radius: 6px;
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal#example-modal h1 {
+  margin: 20px 20px 10px 20px;
+}
+
+ion-modal#example-modal ion-icon {
+  margin-right: 6px;
+
+  width: 40%;
+  height: 40%;
+
+  padding: 4px 0;
+
+  color: #aaaaaa;
+}
+
+ion-modal#example-modal .wrapper {
+  margin-bottom: 10px;
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+}
+
+.btn {
+  min-width: 120px;
+  --border-radius: 8px;
+}

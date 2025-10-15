@@ -1,0 +1,134 @@
+{
+  "database": "cultivos.db",
+  "version": 1,
+  "encrypted": false,
+  "mode": "full",
+  "tables": [
+    {
+      "name": "cultivo",
+      "schema": [
+        { "column": "descripcion", "value": "TEXT(100)" },
+        { "column": "id_cultivo", "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT" },
+        { "column": "estado", "value": "TEXT" },
+        { "column": "id_tipo_cultivo", "value":"INTEGER"},
+        { "column": "imagen", "value": "TEXT" }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+          ["maiz", 1, 1, 1,"assets/img/maiz.png"],
+          ["freza", 2, 1, 3,"assets/img/freza.png"],
+          ["lechuga", 3, 1, 2, "assets/img/lechuga.png"],
+          ["tomate", 4, 1, 1, "assets/img/tomate.png"],
+          ["mango", 5, 1, 3, "assets/img/mango.png"],
+          ["cebolla", 6, 1, 1, "assets/img/cebolla.png"]
+      ]
+    },
+    {
+      "name": "tipo_cultivo",
+      "schema": [
+        { "column": "descripcion", "value": "TEXT" },
+        { "column": "id_tipo_cultivo", "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT" },
+        { "column": "estado", "value": "INTEGER" },
+        { "column": "imagen", "value": "TEXT" }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        ["hortalizas", 1, 1, "assets/img/hortalizas.png"],
+        ["verdura", 2, 1, "assets/img/Verduras.png"],
+        ["frutas2", 3, 1, "assets/img/frutas.png"]
+      ]
+    },
+    {
+      "name": "aplicacion",
+      "schema": [
+        { "column": "descripcion", "value": "TEXT" },
+        { "column": "id_aplicacion", "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT" },
+        { "column": "estado", "value": "INTEGER" },
+        { "column": "fecha", "value": "TEXT" },
+         { "column": "id_campaña", "value":"INTEGER"}
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": []
+    },
+     {
+      "name": "campaña",
+      "schema": [
+        { "column": "id_cultivo", "value": "INTEGER" },
+        { "column": "id_campaña", "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT" },
+        { "column": "estado", "value": "INTEGER" },
+        { "column": "fecha", "value": "TEXT" },
+        { "column": "hecatareas", "value": "TEXT" }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": []
+    },
+    {
+  "name": "departamento",
+  "schema": [
+    { "column": "id_departamento", "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT" },
+    { "column": "nombre", "value": "TEXT" },
+    { "column": "estado", "value": "INTEGER" }
+  ],
+  "indexes": [],
+  "triggers": [],
+  "values": [
+    [1, "Lima", 1],
+    [2, "Cusco", 1]
+  ]
+},
+{
+  "name": "provincia",
+  "schema": [
+    { "column": "id_provincia", "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT" },
+    { "column": "nombre", "value": "TEXT" },
+    { "column": "id_departamento", "value": "INTEGER" },
+    { "column": "estado", "value": "INTEGER" }
+  ],
+  "indexes": [],
+  "triggers": [],
+  "values": [
+    [1, "Lima", 1, 1],
+    [2, "Huaral", 1, 1],
+    [3, "Canta", 1, 1],
+    [4, "Barranca", 1, 1],
+    [10, "Cusco", 2, 1],
+    [11, "Urubamba", 2, 1],
+    [12, "Calca", 2, 1]
+  ]
+},
+{
+  "name": "distrito",
+  "schema": [
+    { "column": "id_distrito", "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT" },
+    { "column": "nombre", "value": "TEXT" },
+    { "column": "id_provincia", "value": "INTEGER" },
+    { "column": "estado", "value": "INTEGER" }
+  ],
+  "indexes": [],
+  "triggers": [],
+  "values": [
+    [1, "Lima", 1, 1],
+    [2, "Miraflores", 1, 1],
+    [3, "San Isidro", 1, 1],
+    [4, "Surco", 1, 1],
+    [5, "Barranco", 1, 1],
+    [20, "Huaral", 2, 1],
+    [21, "Atavillos Alto", 2, 1],
+    [22, "Chancay", 2, 1],
+    [100, "Cusco", 10, 1],
+    [101, "San Sebastián", 10, 1],
+    [102, "San Jerónimo", 10, 1],
+    [103, "Wanchaq", 10, 1],
+    [104, "Santiago", 10, 1],
+    [120, "Urubamba", 11, 1],
+    [121, "Ollantaytambo", 11, 1],
+    [122, "Maras", 11, 1],
+    [123, "Yucay", 11, 1]
+  ]
+}
+  ]
+}

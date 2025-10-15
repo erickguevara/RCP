@@ -1,0 +1,25 @@
+<ion-content>
+  <swiper-container #swiper (slidechange)="onSlideChange($event)" [modules]="swiperModules" [slidesPerView]="1.2"
+    [initialSlide]="1" [centeredSlides]="true" [autoplay]="true" [spaceBetween]="20"
+    [pagination]="{clickable: true, dynamicBullets: true}">
+    <!-- effect="flip" -->
+    <swiper-slide *ngFor="let slide of slides" class="slide-content">
+      <div class="slide-inner">
+        <div class="icon" [ngStyle]="{ 'background-color': slide.color }"  [innerHTML]="slide.icon">
+          
+        </div>
+
+        <h2>{{ slide.title }}</h2>
+        <p>{{ slide.description }}</p>
+
+        <ion-button expand="block" color="success" *ngIf="slide.buttonText" (click)="nextSlide()">
+          {{ slide.buttonText }}
+        </ion-button>
+
+        <ion-button fill="clear" class="skip-btn" (click)="nextHome()" >
+          Saltar tutorial
+        </ion-button>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>

@@ -1,0 +1,82 @@
+ion-header {
+  ion-toolbar {
+    --background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+    ion-title {
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      color: #333;
+    }
+  }
+}
+
+.cultivo-item {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+
+  .icon-container {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: #fff;
+    border-radius: 50%;
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 12px;
+  }
+
+  ion-label {
+    h2 {
+      font-weight: 600;
+      font-size: 15px;
+      margin: 0;
+    }
+    p {
+      color: #777;
+      font-size: 13px;
+      margin: 0;
+    }
+  }
+
+  ion-note {
+    font-size: 12px;
+  }
+}
+
+.footer-bar {
+  --background: transparent;
+
+  .footer-content {
+    background: #0b6e4f;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 6px 14px;
+    margin: 0 16px 10px;
+  }
+
+  .search-icon {
+    color: #fff;
+    margin-right: 8px;
+    font-size: 18px;
+  }
+
+  ion-input {
+    flex: 1;
+    color: #fff;
+    --placeholder-color: #e1e1e1;
+    font-size: 14px;
+  }
+
+  ion-button {
+    --color: #fff;
+  }
+}

@@ -1,0 +1,88 @@
+.progress-container {
+    background-color: #114e2b;
+    border-radius: 10px;
+    height: 6px;
+    margin-bottom: 16px;
+}
+
+.progress-bar {
+    background-color: #ffffff;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease-in-out;
+}
+
+.crop-card {
+    margin: 16px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    &.selected {
+        border: 2px solid var(--ion-color-primary);
+        background-color: rgba(var(--ion-color-primary-rgb), 0.05);
+    }
+}
+
+.question-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 16px 0 8px;
+}
+
+ion-note {
+    padding-right: 2%;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+ion-header {
+    background-color: #2ecc71;
+}
+
+ion-card {
+    text-align: center;
+    border-radius: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+ion-card-content img {
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+}
+
+ion-card.selected {
+    border: 2px solid #2ecc71;
+    transform: scale(1.05);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+ion-button {
+    --background: #2ecc71;
+    --background-activated: #27ae60;
+}
