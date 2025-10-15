@@ -1,0 +1,58 @@
+<ion-header translucent="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button fill="solid" color="tertiary" (click)="volver()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span> Volver al Análisis</span>
+      </ion-button>
+    </ion-buttons>
+
+
+
+  </ion-toolbar>
+  <ion-toolbar color="primary" class="subheader">
+    <ion-title class="ion-text-start">Recomendaciones de Rotación</ion-title>
+    <ion-title class="ion-text-start subtitle-start">Para evitar resistencia de plagas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+
+
+  <!-- Sección 1 -->
+  <div class="box info-box">
+    <div class="box-header">
+      <ion-icon name="trending-up-outline"></ion-icon>
+      <h2>¿Por qué rotar productos?</h2>
+    </div>
+    <p>
+      Usar el mismo producto repetidamente hace que las plagas desarrollen resistencia, perdiendo efectividad.
+      La rotación mantiene el control efectivo de tu cultivo.
+    </p>
+  </div>
+
+
+  <!-- Sección 2 -->
+  <div class="box plan-box">
+    <div class="box-header">
+      <ion-icon name="list-circle-outline"></ion-icon>
+      <h2>Plan de Rotación Sugerido</h2>
+    </div>
+
+    <div class="step" *ngFor="let item of pasos; let i = index">
+      <div class="number">{{ i + 1 }}</div>
+      <div class="text">{{ item }}</div>
+    </div>
+  </div>
+
+
+  <!-- Sección 3 -->
+  <div class="warning-box">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    <h3>Recordatorio Importante</h3>
+    <p>No repitas productos del mismo grupo químico consecutivamente para evitar resistencia.</p>
+  </div>
+
+</ion-content>

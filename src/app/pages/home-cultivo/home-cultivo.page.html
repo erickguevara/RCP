@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/crop-selection" text="" icon="arrow-back" class="back-button">
+      </ion-back-button>
+    </ion-buttons>
+    <div class="header-content">
+      <img src="{{data.imagen}}" alt="Maíz" class="cultivo-img" />
+
+      <div class="title-group">
+        <ion-title> {{data.descripcion}} </ion-title>
+        <ion-title class="subtitle">{{data.formatoLargo}}</ion-title>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Header verde -->
+
+
+  <!-- Cuerpo -->
+  <div class="content">
+    <!-- Card 1 -->
+    <ion-card class="card-analisis" (click)="irAConsultaRapida()">
+      <ion-card-content>
+        <div class="card-header">
+          <ion-icon name="camera-outline"></ion-icon>
+          <div>
+            <h3>Nuevo Análisis</h3>
+            <p>Escanea una etiqueta ahora</p>
+          </div>
+        </div>
+        <ion-button expand="block" color="success">Escanear producto</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Card 2 -->
+    <ion-card class="card-historial" (click)="irAConsultahistorial()">
+      <ion-card-content>
+        <div class="card-header">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div>
+            <h3>Mi Historial</h3>
+            <p> {{data.cantidadapli}} análisis realizados</p>
+          </div>
+        </div>
+        <ion-button expand="block" color="primary">Ver historial</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div style="padding: 2%;">
+    <ion-label class="section-title">Tipo Cultivo</ion-label>
+    <div class="cultivos-container">
+
+      <ion-card class="cultivo-box" *ngFor="let cultivo of tipo_cultivo"
+        (click)="selectCultivo(cultivo.id_tipo_cultivo,cultivo.descripcion)"
+        [class.selected]="data.id_tipo_cultivo === cultivo.id_tipo_cultivo">
+        <ion-card-content>
+          <img [src]="cultivo.imagen" alt="{{cultivo.id_tipo_cultivo}}" />
+          <p style="font-size: 0.7rem;">{{ cultivo.descripcion }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <ion-label class="section-title">Cultivo</ion-label>
+    <div class="cultivos-container">
+
+      <ion-card class="cultivo-box" *ngFor="let c of cultivo" (click)="selectCultivos(c.id_cultivo)"
+        [class.selected]="data.id_cultivo === c.id_cultivo">
+        <ion-card-content>
+          <img [src]="c.img" alt="{{c.id_cultivo}}" />
+          <p style="font-size: 0.7rem;">{{ c.descripcion }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <ion-label class="section-title mt-20">hectáreas</ion-label>
+    <div class="ha-box">
+      <ion-input type="number" [(ngModel)]="data.hecatareas" placeholder="10"></ion-input>
+      <span class="ha-unit">ha</span>
+    </div>
+
+
+    <!-- Cuándo sembraste -->
+    <ion-label class="section-title mt-20">Fecha</ion-label>
+    <ion-item class="input-item">
+      <ion-input type="date" [(ngModel)]="data.fecha"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="btn-actualizar" (click)="actualizarParcela()">
+      <ion-icon name="save-outline" slot="start"></ion-icon>
+      Actualizar Cultivo
+    </ion-button>
+
+    <!-- BOTÓN ROJO -->
+    <ion-button expand="block" class="btn-eliminar" (click)="eliminarParcela()">
+      <ion-icon name="trash-outline" slot="start"></ion-icon>
+      Eliminar Cultivo
+    </ion-button>
+  </div>
+
+
+  <!-- Hectáreas -->
+
+</ion-content>

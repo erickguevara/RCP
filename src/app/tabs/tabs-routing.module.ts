@@ -4,6 +4,17 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'onboarding',
+    pathMatch: 'full'
+  },
+  {
+    path: 'onboarding',
+    loadChildren: () =>
+      import('../pages/onboarding/onboarding.module')
+        .then(m => m.OnboardingPageModule)
+  },
+  {
     path: 'tabs',
     component: TabsPage,
     children: [
@@ -25,15 +36,10 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

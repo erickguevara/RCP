@@ -1,0 +1,89 @@
+.subtitle {
+  margin-top: 10px;
+  color: #4a4a4a;
+  font-size: 15px;
+}
+.subtitle-start{
+   font-size: 14px; 
+   margin-top: 6px;
+   margin-bottom: 6px;
+}
+/* Caja general */
+.box {
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #dce7ff;
+  background: #f8faff;
+}
+
+.info-box {
+  border-color: #b5d4ff;
+  background: #f0f6ff;
+}
+
+.plan-box {
+  border-color: #b6caff;
+  background: #f5f8ff;
+}
+
+.box-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+
+  ion-icon {
+    font-size: 24px;
+    color: #2c7bf6;
+  }
+
+  h2 {
+    font-size: 17px;
+    margin: 0;
+  }
+}
+
+/* Steps */
+.step {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  padding: 12px;
+  background: #e9f1ff;
+  border-radius: 12px;
+}
+
+.number {
+  background: #2c7bf6;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+.text {
+  font-size: 15px;
+}
+
+/* Warning */
+.warning-box {
+  background: #fff9d9;
+  border-left: 6px solid #f4c74f;
+  padding: 15px;
+  border-radius: 10px;
+
+  ion-icon {
+    font-size: 26px;
+    color: #c29b00;
+  }
+
+  h3 {
+    margin: 5px 0 10px;
+  }
+}

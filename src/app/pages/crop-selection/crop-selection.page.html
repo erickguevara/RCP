@@ -1,0 +1,129 @@
+<ion-header>
+
+  <ion-toolbar color="green">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" icon="arrow-back" class="back-button">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear Perfil2</ion-title>
+    <ion-note slot="end">Paso {{ paso }}/5 </ion-note>
+  </ion-toolbar>
+  <div class="progress-container">
+    <div class="progress-bar" [style.width.%]="(paso / 5) * 100"></div>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Barra de progreso -->
+
+
+  <!-- ===== Paso 1 ===== -->
+  <div *ngIf="paso === 1">
+    <h2 class="question-title">¿Cuál es tu tipo cultivo ?</h2>
+    <p class="subtitle">Selecciona el que utilizas </p>
+
+    <div class="options-grid">
+      <ion-card class="crop-card" *ngFor="let cultivo of tipo_cultivo" (click)="seleccionar(cultivo.id_tipo_cultivo,cultivo.descripcion)"
+        [class.selected]="seleccion.tipo_cultivo === cultivo.id_tipo_cultivo">
+        <ion-card-content>
+          <img [src]="cultivo.imagen" alt="{{cultivo.id_tipo_cultivo}}" />
+          <h3>{{ cultivo.descripcion }}</h3>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <!-- ===== Paso 2 ===== -->
+  <div *ngIf="paso === 2">
+    <h2 class="question-title">¿Cuál es tu cultivo?</h2>
+    <p class="subtitle">Selecciona el que utilizas</p>
+
+    <div class="options-grid">
+      <ion-card class="crop-card" *ngFor="let cult of cultivo" (click)="seleccionarcultivo(cult.id_cultivo,cult.descripcion)"
+        [class.selected]="seleccion.cultivo === cult.id_cultivo">
+        <ion-card-content>
+          <img [src]="cult.img" alt="{{cult.id_cultivo}}" />
+          <h3>{{ cult.descripcion }}</h3>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <!-- ===== Paso 3 ===== -->
+  <div *ngIf="paso === 3">
+    <h2 class="question-title">Datos de Cultivo</h2>
+
+
+    <ion-item class="input-item">
+      <ion-label position="floating">Fecha de siembra</ion-label>
+      <ion-input type="date" [(ngModel)]="seleccion.fechaSiembra">
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-label position="floating">Hectáreas</ion-label>
+      <ion-input type="number" min="0" step="0.01" [(ngModel)]="seleccion.hectareas" placeholder="Ej: 2.5">
+      </ion-input>
+    </ion-item>
+  </div>
+  <!-- ===== Paso 4 ===== -->
+  <div *ngIf="paso === 4">
+    <h2 class="question-title">¿Dónde cultivas?</h2>
+    <ion-item>
+      <ion-label>Región</ion-label>
+      <ion-select placeholder="Selecciona una región" [(ngModel)]="seleccion.departamento"
+        (ionChange)="onRegionChange()">
+        <ion-select-option *ngFor="let departamento of departamentos" [value]="departamento.id_departamento">
+          {{ departamento.descripcion }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Provincia -->
+    <ion-item>
+      <ion-label>Provincia</ion-label>
+      <ion-select placeholder="Selecciona una provincia" [(ngModel)]="seleccion.provincia"
+         [disabled]="!provincias.length" (ionChange)="onProvinciaChange()">
+        <ion-select-option *ngFor="let provincia of provincias" [value]="provincia.id_provincia">
+          {{ provincia.descripcion }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Distrito -->
+      <ion-item>
+    <ion-label>Distrito</ion-label>
+    <ion-select
+      placeholder="Selecciona un distrito"
+      [(ngModel)]="seleccion.distrito"
+      [disabled]="!distritos.length">
+      <ion-select-option *ngFor="let distrito of distritos" [value]="distrito.id_distrito">
+        {{ distrito.descripcion }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  </div>
+
+  <!-- ===== Paso 5 ===== -->
+  <div *ngIf="paso === 5">
+    <h2 class="question-title">Resumen de tu perfil</h2>
+    <ion-card>
+      <ion-card-content>
+        <p><strong>Tipo Cultivo:</strong> {{ seleccion.tipo_cultivo_descripcion }}</p>
+        <p><strong>Cultivo:</strong> {{ seleccion.cultivo_descripcion }}</p>
+        <p><strong>Fecha:</strong> {{ seleccion.fechaSiembra }}</p>
+        <p><strong>hectareas:</strong> {{ seleccion.hectareas }}</p>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Botones -->
+  <div class="buttons">
+    <ion-button expand="block" shape="round" (click)="atras()" [disabled]="paso === 1">← Atrás</ion-button>
+    <ion-button expand="block" shape="round" (click)="continuar()" [disabled]="!esPasoValido()">
+      {{ paso === 5 ? 'Finalizar' : 'Continuar →' }}
+    </ion-button>
+  </div>
+</ion-content>

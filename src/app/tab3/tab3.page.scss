@@ -1,0 +1,160 @@
+ion-toolbar {
+  text-align: center;
+
+  ion-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  ion-subtitle {
+    font-size: 14px;
+    color: #e7fbe7;
+  }
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  text-align: center;
+
+  .stat-card {
+    background-color: #eaf8ea;
+    border-radius: 10px;
+    padding: 10px 20px;
+    flex: 1;
+    margin: 0 5px;
+
+    h2 {
+      font-size: 22px;
+      color: #2e7d32;
+      margin: 0;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+    }
+  }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  a {
+    font-size: 14px;
+    color: #3880ff;
+    text-decoration: none;
+  }
+}
+
+.parcela-card {
+  margin-top: 12px;
+
+.info {
+  display: flex;
+
+  margin: 10px 0;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #333;
+  padding-right: 2%;
+}
+
+.info-item ion-icon {
+  font-size: 24px;
+  color: #28a745; /* Verde suave */
+}
+
+  .alert {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 8px;
+
+    ion-icon {
+      margin-right: 6px;
+      font-size: 18px;
+    }
+  }
+
+  .alert-warning {
+    background: #fff8e1;
+    color: #795548;
+  }
+
+  .alert-danger {
+    background: #ffebee;
+    color: #c62828;
+  }
+
+  .last-action {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+}
+
+/* Colores por cultivo */
+.maiz {
+  border: 4px solid #ffdd86;
+}
+
+.trigo {
+  border: 4px solid #7fec84;
+}
+
+.soja {
+  border-left: 4px solid #ef5350;
+}
+
+.header-with-image {
+
+  padding: 10px;
+  display: flex;
+  
+}
+
+.header-content {
+  display: flex;
+
+}
+
+.cultivo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+
+  ion-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  ion-card-subtitle {
+    font-size: 14px;
+    color: #666;
+  }
+}

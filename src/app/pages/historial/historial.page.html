@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Mi Historial</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="download-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div class="search-container">
+    <ion-searchbar
+      placeholder="Buscar producto o ingrediente..."
+      [(ngModel)]="searchText"
+      (ionInput)="filtrar()">
+    </ion-searchbar>
+  </div>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+  <!-- FILTROS -->
+  <div class="filtros-row">
+    <ion-icon name="funnel-outline"></ion-icon>
+    <span>Filtros</span>
+  </div>
+
+  <div class="chips-container">
+    <ion-chip
+      [outline]="filtro !== 'Todos'"
+      (click)="seleccionarFiltro('Todos')">
+      <ion-label>Todos</ion-label>
+    </ion-chip>
+
+    <ion-chip
+      [outline]="filtro !== 'Fungicida'"
+      (click)="seleccionarFiltro('Fungicida')">
+      <ion-label>Fungicida</ion-label>
+    </ion-chip>
+
+    <ion-chip
+      [outline]="filtro !== 'Insecticida'"
+      (click)="seleccionarFiltro('Insecticida')">
+      <ion-label>Insecticida</ion-label>
+    </ion-chip>
+
+    <ion-chip
+      [outline]="filtro !== 'Herbicida'"
+      (click)="seleccionarFiltro('Herbicida')">
+      <ion-label>Herbicida</ion-label>
+    </ion-chip>
+  </div>
+
+  <!-- NUM REGISTROS -->
+  <div class="contador">
+    {{ filtrados.length }} análisis encontrados
+  </div>
+
+  <!-- LISTADO -->
+  <ion-list>
+    <ion-card *ngFor="let item of filtrados" class="item-card">
+
+      <ion-card-content class="card-content">
+
+        <div class="icon-section">
+          <ion-icon [name]="item.icon" class="icon-producto"></ion-icon>
+        </div>
+
+        <div class="middle-section">
+          <h2>{{ item.nombre }}</h2>
+          <p class="ingrediente">{{ item.ingrediente }}</p>
+
+          <div class="info-row">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span>{{ item.fecha }}</span>
+          </div>
+        </div>
+
+        <div class="right-section">
+          <span class="categoria" [ngClass]="item.categoria.toLowerCase()">
+            {{ item.categoria }}
+          </span>
+
+          <ion-icon name="eye-outline" class="ver-icon"></ion-icon>
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+  </ion-list>
+
+</ion-content>

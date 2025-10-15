@@ -1,0 +1,93 @@
+.search-container {
+  padding: 10px;
+  background: var(--ion-color-primary);
+}
+
+.filtros-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.chips-container {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 15px;
+  overflow-x: auto;
+}
+
+.contador {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.item-card {
+  border-radius: 12px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-section {
+  min-width: 40px;
+  text-align: center;
+}
+
+.icon-producto {
+  font-size: 32px;
+  color: #54c26a;
+}
+
+.middle-section h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.middle-section .ingrediente {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  color: #666;
+}
+
+.right-section {
+  margin-left: auto;
+  text-align: right;
+}
+
+.categoria {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.categoria.fungicida {
+  color: #1dbf6e;
+}
+
+.categoria.insecticida {
+  color: #ff3a3a;
+}
+
+.categoria.herbicida {
+  color: #e4b400;
+}
+
+.ver-icon {
+  font-size: 22px;
+  margin-top: 12px;
+  color: #3879f6;
+}

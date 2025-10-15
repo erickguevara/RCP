@@ -1,0 +1,250 @@
+ion-content {
+  --background: #f5f6fa;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+}
+
+.cultivo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.title-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+ion-title {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.header {
+  background-color: #2ecc71;
+  color: #fff;
+  border-radius: 0 0 20px 20px;
+  padding: 25px 20px 40px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-top h2 {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.icons ion-icon {
+  font-size: 22px;
+  margin-left: 10px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+.progress {
+  background-color: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 8px;
+  width: fit-content;
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.content {
+  padding: 15px;
+}
+
+ion-card {
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.card-header ion-icon {
+  font-size: 35px;
+}
+
+.card-analisis ion-icon {
+  color: #2ecc71;
+}
+
+.card-historial ion-icon {
+  color: #007bff;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+
+.card-header p {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+ion-button {
+  border-radius: 10px;
+  font-weight: 600;
+}
+.section-title {
+  font-weight: 600;
+  margin-top: 15px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.helper-text {
+  font-size: 12px;
+  color: #777;
+  margin-top: 3px;
+}
+
+.input-item {
+  --background: #fff;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.cultivos-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+
+
+.ha-box {
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.ha-box ion-input {
+  flex: 1;
+}
+
+.ha-unit {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.label-small {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.dias-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.dia-btn {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 14px;
+  font-size: 15px;
+  transition: .2s;
+}
+
+.dia-btn.active {
+  border-color: #2ecc71;
+  background: #e8f9ef;
+  font-weight: bold;
+}
+
+.divider {
+  height: 1px;
+  background: #e2e2e2;
+  margin: 22px 0;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.cultivo-box {
+    margin: 16px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    &.selected {
+        border: 2px solid var(--ion-color-primary);
+        background-color: rgba(var(--ion-color-primary-rgb), 0.05);
+    }
+}
+.btn-actualizar {
+  --background: #28a745;
+  --background-hover: #23963d;
+  --background-activated: #1f7e33;
+  --border-radius: 14px;
+  --color: #fff;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  font-weight: 600;
+  margin-top: 12px;
+  box-shadow: 0 2px 6px rgba(40, 167, 69, 0.35);
+}
+
+.btn-eliminar {
+  --background: #fff5f5;
+  --background-hover: #ffecec;
+  --background-activated: #fbe3e3;
+  --color: #d9534f;
+  --border-radius: 14px;
+  --border-color: #ffdddd;
+  --border-width: 1px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  font-weight: 600;
+  margin-top: 12px;
+  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.08);
+}
+
+.btn-eliminar ion-icon {
+  color: #d9534f;
+}

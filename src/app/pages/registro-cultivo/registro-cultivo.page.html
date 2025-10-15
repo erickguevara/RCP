@@ -1,0 +1,110 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/crop-selection" text="" icon="arrow-back" class="back-button">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Añadir Campaña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" className="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Cultivo</ion-label>
+      <ion-select placeholder="Selecciona un tipo" [(ngModel)]="companaCultivo">
+        <ion-select-option *ngFor="let tipo of cultivo" [value]="tipo.id_cultivo">
+          {{ tipo.descripcion }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Hectáreas</ion-label>
+      <ion-input type="number" placeholder="Value"  [(ngModel)]="hectareas"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item lines="full">
+      <ion-label>
+        <strong>Agregar Aplicacion</strong>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngFor="let apli of aplicacion ; let i = index">
+      <ion-avatar slot="start">
+        <div style="
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+">
+          {{ i + 1 }}
+        </div>
+      </ion-avatar>
+      <ion-label>{{apli.fechaformat}}</ion-label>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" (click)="confirmarEliminar(i)" color="primary">
+          <ion-icon [icon]="trash"></ion-icon>
+        </ion-button>
+
+        <ion-button fill="clear" id="open-custom-dialog" color="primary" (click)="abrirModal(i + 1)">
+          <ion-icon [icon]="create"></ion-icon>
+        </ion-button>
+
+        <ion-button fill="clear" routerLink="/aplicacionscreen" color="primary">
+          <ion-icon [icon]="eye"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+
+    <ion-item button detail={false}>
+      <ion-avatar slot="start"></ion-avatar>
+      <ion-label></ion-label>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" id="open-custom-dialog" (click)="abrirModal(0)" color="primary">
+          <ion-icon [icon]="add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+
+  <div class="button-group">
+    <ion-button color="primary" class="btn" (click)="createcultivo()">
+      Crear Cultivo
+    </ion-button>
+
+  </div>
+  <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+    <ng-template>
+      <div className="wrapper">
+        <h1>{{ modoEdicion ? 'Editar Aplicación' : 'Crear Aplicación' }}</h1>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Descripción</ion-label>
+            <ion-input placeholder="Value" [(ngModel)]="descripcion"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Fecha</ion-label>
+            <ion-input type="date" placeholder="Value" [(ngModel)]="fecha"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div class="button-group">
+          <ion-button color="primary" class="btn">
+            cancelar
+          </ion-button>
+          <ion-button color="primary" (click)="agregar()" fill="outline" class="btn">
+            {{ modoEdicion ? 'Actualizar' : 'Crear' }}
+          </ion-button>
+        </div>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

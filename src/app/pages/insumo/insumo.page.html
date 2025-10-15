@@ -1,0 +1,217 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button fill="solid" color="medium" (click)="volver()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span>Volver</span>
+      </ion-button>
+    </ion-buttons>
+
+
+
+    <ion-buttons *ngIf="datos" slot="end">
+      <ion-button fill="solid" color="medium" id="open-modal">
+        Ver Rotación →
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar color="warning" class="subheader">
+    <ion-title class="ion-text-start">{{ data.name }}</ion-title>
+    <ion-title class="subtitle">{{ data.descripcion }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="datos" class="recomend-card">
+    <ion-card-header>
+      <ion-card-title class="titulo">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        RECOMENDACIÓN PERSONALIZADA
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <!-- Cultivo -->
+      <div class="item-line">
+        <ion-icon name="leaf-outline" class="icon"></ion-icon>
+        <div class="text-block">
+          <strong>Tu cultivo:</strong><br />
+          {{datos.descripcion}} - {{datos.dias}} días sembrado
+        </div>
+      </div>
+
+      <!-- Dosis -->
+      <div class="item-line">
+        <ion-icon name="water-outline" class="icon"></ion-icon>
+        <div class="text-block">
+          <strong > {{recomendacio}} </strong><br />
+           {{recomendacio2}}
+        </div>
+      </div>
+
+      <!-- Momento ideal -->
+      <div class="item-line">
+        <ion-icon name="time-outline" class="icon"></ion-icon>
+        <div class="text-block">
+          <strong>Aplicacion del insumo :</strong><br />
+          {{maximoaplicacion}} veces
+        </div>
+      </div>
+
+      <!-- Compatibilidad -->
+      <div class="compatibilidad">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        {{recomendacio3}}
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card-info">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Información Básica
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="info-line">
+        <strong>Producto:</strong>
+        <span>{{ data.name }}</span>
+      </div>
+
+      <div class="info-line">
+        <strong>Ingrediente:</strong>
+        <span>{{ data.ingrediente }}</span>
+      </div>
+
+      <div class="info-line">
+        <strong>Grupo Químico:</strong>
+        <span>{{ data.Grupo_quimico }}</span>
+      </div>
+
+      <div class="info-line">
+        <strong>Sub Grupo:</strong>
+        <span>{{ data.tipo }}</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="uso-card">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="eye-outline"></ion-icon>
+        Cómo Usar
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Dosis:</strong></p>
+      <p class="dosis">{{ data.dosis_minima }} - {{ data.dosis_maxima }} ({{ data.cantidad_cilindro }})</p>
+      <p class="detalle">{{ data.dosis_minima }} {{ data.cantidad_cilindro }} (plaga leve) - {{ data.dosis_maxima }} {{
+        data.cantidad_cilindro }} (plaga severa) </p>
+
+      <p class="titulo-aplicar">Cuándo aplicar:</p>
+      <p>{{ data.cuando_aplicar }}</p>
+
+
+      <ion-card class="espera-card">
+        <ion-card-content>
+          <p><strong>Tiempo de espera:</strong></p>
+          <p class="espera-texto">{{ data.tiempo_espera }}</p>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card class="ph-card">
+        <ion-card-content>
+          <p><strong>pH del Agua</strong></p>
+          <div class="ph-texto">
+            <span>Muy ácido</span>
+            <span class="ideal">Ideal: {{ data.nivel_php_minimo }} - {{ data.nivel_php_maximo }}</span>
+            <span>Muy alcalino</span>
+          </div>
+          <div class="ph-barra">
+            <div class="zona acido"></div>
+            <div class="zona ideal"></div>
+            <div class="zona alcalino"></div>
+          </div>
+          <div class="ph-valores">
+            <span>5.0</span>
+            <span>9.0</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card [class]="getRiskClass(data.numeroaplicaciones)">
+
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="alert-circle-outline"></ion-icon>
+        Riesgo de Resistencia: {{data.resistencia}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong class="chipstitle">Controla estas plagas:</strong></p>
+      <div class="chips">
+        <ion-chip [color]="getRiskClasscolor(data.numeroaplicaciones)" *ngFor="let p of data.plaga"> {{p.nombre}}
+        </ion-chip>
+
+      </div>
+
+      <div class="maximo">
+        <strong>Máximo {{data.numeroaplicaciones}} aplicaciones por temporada</strong>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-button *ngIf="datos" expand="block" class="btn-actualizar" (click)="thiscreateAplicacion()">
+    <ion-icon name="save-outline" slot="start"></ion-icon>
+    Guardar Aplicacion
+  </ion-button>
+
+  <!-- BOTÓN ROJO -->
+  <ion-button expand="block" class="btn-eliminar" (click)="runOtroAnalisis()">
+    <ion-icon name="repeat-outline" slot="start"></ion-icon>
+
+    Analizar otro
+  </ion-button>
+
+
+  <!-- Modal -->
+  <ion-modal #modal trigger="open-modal">
+    <ng-template>
+
+      <ion-header>
+        <ion-toolbar color="warning">
+          <ion-title>Tipo plaga Desea ver rotacion</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="cerrar()">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding">
+        <ion-item class="input-item">
+          <ion-label>Plaga</ion-label>
+          <ion-select placeholder="Selecciona Plaga" [(ngModel)]="id_plaga">
+            <ion-select-option *ngFor="let h of data.plaga" [value]="h">
+              {{ h.nombre }}
+            </ion-select-option>
+          </ion-select>
+
+        </ion-item>
+        <ion-button expand="block" class="btn-actualizar" (click)="verRotacion()">
+          <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+          Ver Rotacion
+        </ion-button>
+      </ion-content>
+
+    </ng-template>
+  </ion-modal>
+</ion-content>

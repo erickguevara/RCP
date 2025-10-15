@@ -1,0 +1,2509 @@
+{
+  "database": "cultivos.db",
+  "version": 1,
+  "encrypted": false,
+  "mode": "full",
+  "tables": [
+    {
+      "name": "cultivo",
+      "schema": [
+        {
+          "column": "descripcion",
+          "value": "TEXT(100)"
+        },
+        {
+          "column": "id_cultivo",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "estado",
+          "value": "TEXT"
+        },
+        {
+          "column": "id_tipo_cultivo",
+          "value": "INTEGER"
+        },
+        {
+          "column": "imagen",
+          "value": "TEXT"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [
+          "Maíz",
+          1,
+          1,
+          1,
+          "assets/img/maiz.png"
+        ],
+        [
+          "Frijol",
+          2,
+          1,
+          1,
+          "assets/img/frijol.png"
+        ],
+        [
+          "Quinua",
+          3,
+          1,
+          1,
+          "assets/img/quinoa.png"
+        ],
+        [
+          "Kiwicha",
+          4,
+          1,
+          1,
+          "assets/img/Kiwicha.png"
+        ],
+        [
+          "Papa",
+          5,
+          1,
+          2,
+          "assets/img/papa.png"
+        ],
+        [
+          "Tomate",
+          6,
+          1,
+          2,
+          "assets/img/tomate.png"
+        ],
+        [
+          "Lechuga",
+          7,
+          1,
+          2,
+          "assets/img/lechuga.png"
+        ],
+        [
+          "Ajíes",
+          8,
+          1,
+          2,
+          "assets/img/aji.png"
+        ],
+        [
+          "Palta",
+          9,
+          1,
+          3,
+          "assets/img/palta.png"
+        ],
+        [
+          "Cítricos",
+          10,
+          1,
+          3,
+          "assets/img/citricos.png"
+        ],
+        [
+          "Fresa",
+          11,
+          1,
+          3,
+          "assets/img/freza.png"
+        ],
+        [
+          "Mango",
+          12,
+          1,
+          3,
+          "assets/img/mango.png"
+        ],
+        [
+          "Café",
+          13,
+          1,
+          4,
+          "assets/img/cafe.png"
+        ],
+        [
+          "Cacao",
+          14,
+          1,
+          4,
+          "assets/img/cacao.png"
+        ],
+        [
+          "Palma aceitera",
+          15,
+          1,
+          4,
+          "assets/img/palma.png"
+        ],
+        [
+          "Caña de azúcar",
+          16,
+          1,
+          4,
+          "assets/img/cana.png"
+        ],
+        [
+          "Flores",
+          17,
+          1,
+          5,
+          "assets/img/flor.png"
+        ]
+      ]
+    },
+    {
+      "name": "tipo_cultivo",
+      "schema": [
+        {
+          "column": "descripcion",
+          "value": "TEXT"
+        },
+        {
+          "column": "id_tipo_cultivo",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "estado",
+          "value": "INTEGER"
+        },
+        {
+          "column": "imagen",
+          "value": "TEXT"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [
+          "Granos",
+          1,
+          1,
+          "assets/img/Granos.png"
+        ],
+        [
+          "Verduras",
+          2,
+          1,
+          "assets/img/Verduras.png"
+        ],
+        [
+          "Frutas",
+          3,
+          1,
+          "assets/img/frutas.png"
+        ],
+        [
+          "Tropicales",
+          4,
+          1,
+          "assets/img/Tropicales.png"
+        ],
+        [
+          "Otros",
+          5,
+          1,
+          "assets/img/hortalizas.png"
+        ]
+      ]
+    },
+    {
+      "name": "aplicacion",
+      "schema": [
+        {
+          "column": "id_aplicacion",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "estado",
+          "value": "INTEGER"
+        },
+        {
+          "column": "fecha",
+          "value": "TEXT"
+        },
+        {
+          "column": "id_campaña",
+          "value": "INTEGER"
+        },
+        {
+          "column": "id_insumo",
+          "value": "INTEGER"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": []
+    },
+    {
+      "name": "campaña",
+      "schema": [
+        {
+          "column": "id_cultivo",
+          "value": "INTEGER"
+        },
+        {
+          "column": "id_campaña",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "estado",
+          "value": "INTEGER"
+        },
+        {
+          "column": "fecha",
+          "value": "TEXT"
+        },
+        {
+          "column": "hecatareas",
+          "value": "TEXT"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": []
+    },
+    {
+      "name": "departamento",
+      "schema": [
+        {
+          "column": "id_departamento",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "nombre",
+          "value": "TEXT"
+        },
+        {
+          "column": "estado",
+          "value": "INTEGER"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [
+          1,
+          "Lima",
+          1
+        ],
+        [
+          2,
+          "Cusco",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "provincia",
+      "schema": [
+        {
+          "column": "id_provincia",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "nombre",
+          "value": "TEXT"
+        },
+        {
+          "column": "id_departamento",
+          "value": "INTEGER"
+        },
+        {
+          "column": "estado",
+          "value": "INTEGER"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [
+          1,
+          "Lima",
+          1,
+          1
+        ],
+        [
+          2,
+          "Huaral",
+          1,
+          1
+        ],
+        [
+          3,
+          "Canta",
+          1,
+          1
+        ],
+        [
+          4,
+          "Barranca",
+          1,
+          1
+        ],
+        [
+          10,
+          "Cusco",
+          2,
+          1
+        ],
+        [
+          11,
+          "Urubamba",
+          2,
+          1
+        ],
+        [
+          12,
+          "Calca",
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "distrito",
+      "schema": [
+        {
+          "column": "id_distrito",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "nombre",
+          "value": "TEXT"
+        },
+        {
+          "column": "id_provincia",
+          "value": "INTEGER"
+        },
+        {
+          "column": "estado",
+          "value": "INTEGER"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [
+          1,
+          "Lima",
+          1,
+          1
+        ],
+        [
+          2,
+          "Miraflores",
+          1,
+          1
+        ],
+        [
+          3,
+          "San Isidro",
+          1,
+          1
+        ],
+        [
+          4,
+          "Surco",
+          1,
+          1
+        ],
+        [
+          5,
+          "Barranco",
+          1,
+          1
+        ],
+        [
+          20,
+          "Huaral",
+          2,
+          1
+        ],
+        [
+          21,
+          "Atavillos Alto",
+          2,
+          1
+        ],
+        [
+          22,
+          "Chancay",
+          2,
+          1
+        ],
+        [
+          100,
+          "Cusco",
+          10,
+          1
+        ],
+        [
+          101,
+          "San Sebastián",
+          10,
+          1
+        ],
+        [
+          102,
+          "San Jerónimo",
+          10,
+          1
+        ],
+        [
+          103,
+          "Wanchaq",
+          10,
+          1
+        ],
+        [
+          104,
+          "Santiago",
+          10,
+          1
+        ],
+        [
+          120,
+          "Urubamba",
+          11,
+          1
+        ],
+        [
+          121,
+          "Ollantaytambo",
+          11,
+          1
+        ],
+        [
+          122,
+          "Maras",
+          11,
+          1
+        ],
+        [
+          123,
+          "Yucay",
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "grupo",
+      "schema": [
+        {
+          "column": "id_grupo",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "nombre",
+          "value": "TEXT"
+        },
+        {
+          "column": "subgrupo",
+          "value": "TEXT"
+        },
+        {
+          "column": "ingrediente",
+          "value": "TEXT"
+        },
+        {
+          "column": "clase",
+          "value": "TEXT"
+        },
+        {
+          "column": "resistencia",
+          "value": "TEXT"
+        },
+         {
+          "column": "numeroaplicaciones",
+          "value": "TEXT"
+        },
+        {
+          "column": "estado",
+          "value": "INTEGER"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [
+          1,
+          "1A",
+          "Carbamatos",
+          "Alanycarb, Aldicarb, Bendiocarb, Benfuracarb, Butocarboxim, Butoxycarboxim, Carbaryl, Carbofuran, Carbosulfan, Ethiofencarb, Fenobucarb, Formetanate, Furathiocarb, Isoprocarb, Methiocarb, Methomyl, Metolcarb, Oxamyl, Pirimicarb, Propoxur, Thiodicarb, Thiofanox, Triazamate, Trimethacarb, XMC, Xylylcarb",
+          "Insecticida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          2,
+          "1B",
+          "Organofosforados",
+          "Acephate, Azamethiphos, Chlorpyrifos, Chlorpyrifos-methyl, Diazinon, Dichlorvos/DDVP, Dimethoate, Malathion, Methamidophos, Parathion, Phorate, Profenofos, Trichlorfon (y 50+ más)",
+          "Insecticida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          3,
+          "2A",
+          "Organoclorados ciclodien",
+          "Chlordane, Endosulfan",
+          "Insecticida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          4,
+          "2B",
+          "Fenilpirazoles (Fiproles)",
+          "Ethiprole, Fipronil",
+          "Insecticida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          5,
+          "3A",
+          "Piretroides, Piretrinas",
+          "Acrinathrin, Allethrin, Bifenthrin, Cyfluthrin, beta-Cyfluthrin, Cyhalothrin, lambda-Cyhalothrin, gamma-Cyhalothrin, Cypermethrin, alpha-Cypermethrin, Deltamethrin, Esfenvalerate, Etofenprox, Permethrin, Pyrethrins (pyrethrum), Transfluthrin (y 30+ más)",
+          "Insecticida",
+          "MUY ALTO",
+          1,
+          1
+        ],
+        [
+          6,
+          "3B",
+          "DDT, Methoxychlor",
+          "DDT, Methoxychlor",
+          "Insecticida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          7,
+          "4A",
+          "Neonicotinoides",
+          "Acetamiprid, Clothianidin, Dinotefuran, Imidacloprid, Nitenpyram, Thiacloprid, Thiamethoxam",
+          "Insecticida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          8,
+          "4B",
+          "Nicotina",
+          "Nicotine",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          9,
+          "4C",
+          "Sulfoximinas",
+          "Sulfoxaflor",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          10,
+          "4D",
+          "Butenolidas",
+          "Flupyradifurone",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          11,
+          "4E",
+          "Mesoiónicos",
+          "Dicloromezotiaz, Fenmezoditiaz, Triflumezopyrim",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ]
+        ,
+        [
+          12,
+          "4F",
+          "Piridilidenos",
+          "Flupyrimin",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          13,
+          "5",
+          "Espinosinas",
+          "Spinetoram, Spinosad",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          14,
+          "6",
+          "Avermectinas, Milbemicinas",
+          "Abamectin, Emamectin benzoate, Lepimectin, Milbemectin",
+          "Insecticida",
+          "MEDIO-ALTO",
+          1,
+          1
+        ],
+        [
+          15,
+          "7A",
+          "Análogos hormona juvenil",
+          "Hydroprene, Kinoprene, Methoprene",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          16,
+          "7B",
+          "Fenoxycarb",
+          "Fenoxycarb",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          17,
+          "7C",
+          "Pyriproxyfen",
+          "Pyriproxyfen",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          18,
+          "8A",
+          "Haluros de alquilo",
+          "1,3-Dichloropropene, Methyl bromide y otros haluros de alquilo",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          19,
+          "8B",
+          "Cloropicrina",
+          "Chloropicrin",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          20,
+          "8C",
+          "Fluoruros",
+          "Cryolite (Sodium aluminum fluoride), Sulfuryl fluoride",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          21,
+          "8D",
+          "Boratos",
+          "Borax, Boric acid, Disodium octaborate, Sodium borate, Sodium metaborate",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          22,
+          "8E",
+          "Tártaro emético",
+          "Tartar emetic",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          23,
+          "8F",
+          "Generadores de metil isotiocianato",
+          "Dazomet, Metam, Methyl isothiocyanate",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          24,
+          "9B",
+          "Derivados piridina azometina",
+          "Pymetrozine, Pyrifluquinazon",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          25,
+          "9D",
+          "Piropenos",
+          "Afidopyropen",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          26,
+          "10A",
+          "Clofentezine, Diflovidazin, Hexythiazox",
+          "Clofentezine, Diflovidazin, Hexythiazox",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          27,
+          "10B",
+          "Etoxazole",
+          "Etoxazole",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          28,
+          "11A",
+          "Bacillus thuringiensis y proteínas insecticidas",
+          "Bacillus thuringiensis subsp. israelensis, aizawai, kurstaki, tenebrionis. Proteínas Bt cultivos transgénicos: Cry1Ab, Cry1Ac, Cry1Fa, Cry2Ab, Vip3A, Cry3Ab, Cry3Bb",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          29,
+          "11B",
+          "Bacillus sphaericus",
+          "Bacillus sphaericus",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          30,
+          "12A",
+          "Diafenthiuron",
+          "Diafenthiuron",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          31,
+          "12B",
+          "Acaricidas organoestánnicos",
+          "Azocyclotin, Cyhexatin, Fenbutatin oxide",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          32,
+          "12C",
+          "Propargite",
+          "Propargite",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          33,
+          "12D",
+          "Tetradifon",
+          "Tetradifon",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          34,
+          "13",
+          "Pirroles, Dinitrofenoles, Sulfluramid",
+          "Chlorfenapyr, DNOC, Sulfluramid",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          35,
+          "14",
+          "Análogos nereistoxina",
+          "Bensultap, Cartap hydrochloride, Thiocyclam, Thiosultap-sodium",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          36,
+          "15",
+          "Benzoilureas",
+          "Bistrifluron, Chlorfluazuron, Diflubenzuron, Flucycloxuron, Flufenoxuron, Hexaflumuron, Lufenuron, Novaluron, Noviflumuron, Teflubenzuron, Triflumuron",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          37,
+          "16",
+          "Buprofezin",
+          "Buprofezin",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          38,
+          "17",
+          "Cyromazine",
+          "Cyromazine",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          39,
+          "18",
+          "Diacilhidrazinas",
+          "Chromafenozide, Halofenozide, Methoxyfenozide, Tebufenozide",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          40,
+          "19",
+          "Amitraz",
+          "Amitraz",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          41,
+          "20A",
+          "Hydramethylnon",
+          "Hydramethylnon",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          42,
+          "20B",
+          "Acequinocyl",
+          "Acequinocyl",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          43,
+          "20C",
+          "Fluacrypyrim",
+          "Fluacrypyrim",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          44,
+          "20D",
+          "Bifenazate",
+          "Bifenazate",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          45,
+          "21A",
+          "Acaricidas e insecticidas METI",
+          "Fenazaquin, Fenpyroximate, Pyridaben, Pyrimidifen, Tebufenpyrad, Tolfenpyrad",
+          "Insecticida",
+          "MEDIO-ALTO",
+          1,
+          1
+        ],
+        [
+          46,
+          "21B",
+          "Rotenone",
+          "Rotenone (Derris)",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          47,
+          "22A",
+          "Oxadiazinas",
+          "Indoxacarb",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          48,
+          "22B",
+          "Semicarbazonas",
+          "Metaflumizone",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          49,
+          "23",
+          "Derivados ácido tetrónico y tetámico",
+          "Spidoxamat, Spirodiclofen, Spiromesifen, Spiropidion, Spirotetramat",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          50,
+          "24A",
+          "Fosfuros",
+          "Aluminium phosphide, Calcium phosphide, Phosphine, Zinc phosphide",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          51,
+          "24B",
+          "Cianuros",
+          "Calcium cyanide, Potassium cyanide, Sodium cyanide",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          52,
+          "25A",
+          "Derivados beta-cetonitrilo",
+          "Cyenopyrafen, Cyflumetofen",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          53,
+          "25B",
+          "Carboxanilidas",
+          "Pyflubumide",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          54,
+          "28",
+          "Diamidas",
+          "Chlorantraniliprole, Cyantraniliprole, Cyclaniliprole, Flubendiamide, Tetraniliprole",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          55,
+          "29",
+          "Flonicamid",
+          "Flonicamid",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          56,
+          "30",
+          "Isoxazolinas, Meta-diamidas",
+          "Isocycloseram, Broflanilide, Cyproflanilide, Fluxametamide",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          57,
+          "31",
+          "Virus patogénicos ocluidos hospedero-específicos",
+          "Granulovirus (GVs): Cydia pomonella GV, Thaumatotibia leucotreta GV. Nucleopolyhedrovirus (NPVs): Anticarsia gemmatalis MNPV, Helicoverpa armigera NPV",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          58,
+          "32",
+          "Péptido GS-omega/kappa HXTX-Hv1a",
+          "GS-omega/kappa HXTX-Hv1a peptide",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          59,
+          "33",
+          "Acynonapyr",
+          "Acynonapyr",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          60,
+          "34",
+          "Flometoquin",
+          "Flometoquin",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          61,
+          "35",
+          "Ledprona",
+          "Ledprona",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          62,
+          "36",
+          "Piridazina pirazol carboxamidas",
+          "Dimpropyridaz",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          63,
+          "37",
+          "Oxazosulfyl",
+          "Oxazosulfyl",
+          "Insecticida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          64,
+          "UN*",
+          "Compuestos modo acción desconocido",
+          "Azadirachtin, Benzoximate, Benzpyrimoxan, Bromopropylate, Chinomethionat, Dicofol, Lime sulfur, Mancozeb, Pyridalyl, Sulfur",
+          "Insecticida",
+          "VARIABLE",
+          2,
+          1
+        ],
+        [
+          65,
+          "UNB*",
+          "Agentes bacterianos (no-Bt) modo acción desconocido",
+          "Burkholderia spp, Wolbachia pipientis (Zap)",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          66,
+          "UNE*",
+          "Esencias botánicas (extractos, aceites) modo acción desconocido",
+          "Chenopodium ambrosioides extract, Clitoria ternatea extract, Fatty acid monoesters with glycerol or propanediol, Neem oil, Nonanoic acid, Sabadilla extract",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          67,
+          "UNF*",
+          "Agentes fúngicos modo acción desconocido",
+          "Akanthomyces muscarius Ve6, Beauveria bassiana strains, Metarhizium brunneum strain F52, Paecilomyces fumosoroseus Apopka strain 97",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          68,
+          "UNM*",
+          "Disruptores mecánicos y físicos no específicos",
+          "Diatomaceous earth, Mineral oil, Polydimethylsiloxane (PDMS)",
+          "Insecticida",
+          "MUY BAJO",
+          3,
+          1
+        ],
+        [
+          69,
+          "UNP*",
+          "Péptidos modo acción desconocido",
+          "(Ninguno registrado actualmente)",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          70,
+          "UNV*",
+          "Agentes virales (no-baculovirus) modo acción desconocido",
+          "(Ninguno registrado actualmente)",
+          "Insecticida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          71,
+          "A1",
+          "Fungicidas PA (FenilAmidas)",
+          "Benalaxyl, Benalaxyl-M (kiralaxyl), Furalaxyl, Metalaxyl, Metalaxyl-M (mefenoxam), Oxadixyl, Ofurace",
+          "Fungicida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          72,
+          "A2",
+          "Hidroxi-(2-amino)-pirimidinas",
+          "Bupirimate, Dimethirimol, Ethirimol",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          73,
+          "A3",
+          "Heteroaromáticos",
+          "Hymexazol, Octhilinone",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          74,
+          "A4",
+          "Ácidos carboxílicos",
+          "Oxolinic acid",
+          "Fungicida",
+          "MEDIO-ALTO",
+          1,
+          1
+        ],
+        [
+          75,
+          "A5",
+          "Fungicidas DHODI",
+          "Ipflufenoquin, Quinofumelin",
+          "Fungicida",
+          "MEDIO-ALTO",
+          1,
+          1
+        ],
+        [
+          76,
+          "B1",
+          "Fungicidas MBC (Metil Benzimidazol Carbamatos)",
+          "Benomyl, Carbendazim, Fuberidazole, Thiabendazole, Thiophanate, Thiophanate-methyl",
+          "Fungicida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          77,
+          "B2",
+          "N-fenil carbamatos",
+          "Diethofencarb",
+          "Fungicida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          78,
+          "B3",
+          "Benzamidas",
+          "Zoxamide, Ethaboxam",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          79,
+          "B4",
+          "Fenilureas",
+          "Pencycuron",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          80,
+          "B5",
+          "Benzamidas",
+          "Fluopicolide, Fluopimomide",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          81,
+          "B6",
+          "Cianoacrilatos, Aril-fenilcetonas",
+          "Phenamacril, Metrafenone, Pyriofenone",
+          "Fungicida",
+          "MEDIO-ALTO",
+          1,
+          1
+        ],
+        [
+          82,
+          "B7",
+          "Piridazina",
+          "Pyridachlometyl",
+          "Fungicida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          83,
+          "C1",
+          "Pirimidin-aminas",
+          "Diflumetorim, Tolfenpyrad, Fenazaquin",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          84,
+          "C2",
+          "Fungicidas SDHI (Inhibidores Succinato-deshidrogenasa)",
+          "Benodanil, Flutolanil, Mepronil, Isofetamid, Fluopyram, Cyclobutrifluram, Fenfuram, Carboxin, Oxycarboxin, Thifluzamide, Benzovindiflupyr, Bixafen, Fluindapyr, Fluxapyroxad, Furametpyr, Inpyrfluxam, Isopyrazam, Penflufen, Penthiopyrad, Sedaxane, Isoflucypram, Pydiflumetofen, Boscalid, Pyraziflumid",
+          "Fungicida",
+          "MEDIO-ALTO",
+          2,
+          1
+        ],
+        [
+          85,
+          "C3",
+          "Fungicidas QoI (Inhibidores Quinona outside)",
+          "Azoxystrobin, Coumoxystrobin, Enoxastrobin, Flufenoxystrobin, Picoxystrobin, Pyraoxystrobin, Mandestrobin, Pyraclostrobin, Pyrametostrobin, Triclopyricarb, Kresoxim-methyl, Trifloxystrobin, Dimoxystrobin, Fenaminstrobin, Metominostrobin, Orysastrobin, Fluoxastrobin, Fenamidone, Pyribencarb, Famoxadone",
+          "Fungicida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          86,
+          "C3 (11A)",
+          "Fungicidas QoI Subgrupo A",
+          "Metyltetraprole",
+          "Fungicida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          87,
+          "C4",
+          "Fungicidas QiI (Inhibidores Quinona inside)",
+          "Cyazofamid, Amisulbrom, Fenpicoxamid, Florylpicoxamid",
+          "Fungicida",
+          "MEDIO-ALTO",
+          1,
+          1
+        ],
+        [
+          88,
+          "C5",
+          "Dinitrofenil-crotonatos, 2,6-dinitro-anilinas",
+          "Binapacryl, Meptyldinocap, Dinocap, Fluazinam",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          89,
+          "C6",
+          "Compuestos organoestánnicos",
+          "Fentin acetate, Fentin chloride, Fentin hydroxide",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          90,
+          "C7",
+          "Tiofen-carboxamidas",
+          "Silthiofam",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          91,
+          "C8",
+          "Fungicida QioSI",
+          "Ametoctradin",
+          "Fungicida",
+          "MEDIO-ALTO",
+          1,
+          1
+        ],
+        [
+          92,
+          "D1",
+          "Fungicidas AP (Anilino-Pirimidinas)",
+          "Cyprodinil, Mepanipyrim, Pyrimethanil",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          93,
+          "D2",
+          "Antibiótico ácido enopiranuronico",
+          "Blasticidin-S",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          94,
+          "D3",
+          "Antibiótico hexopiranosilo",
+          "Kasugamycin",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          95,
+          "D4",
+          "Antibiótico glucopiranosilo",
+          "Streptomycin",
+          "Fungicida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          96,
+          "D5",
+          "Antibiótico tetraciclina",
+          "Oxytetracycline",
+          "Fungicida",
+          "ALTO",
+          1,
+          1
+        ],
+        [
+          97,
+          "D6",
+          "Benzoxaboroles",
+          "Tavaborole",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          98,
+          "E1",
+          "Azanaftalenos",
+          "Quinoxyfen, Proquinazid",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          99,
+          "E2",
+          "Fungicidas PP (FenilPirroles)",
+          "Fenpiclonil, Fludioxonil",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          100,
+          "E3",
+          "Dicarboximidas",
+          "Chlozolinate, Dimethachlone, Iprodione, Procymidone, Vinclozolin",
+          "Fungicida",
+          "MEDIO-ALTO",
+          1,
+          1
+        ],
+        [
+          101,
+          "F2",
+          "Fosforotiolatos, Ditiolanos",
+          "Edifenphos, Iprobenfos (IBP), Pyrazophos, Isoprothiolane",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          102,
+          "F3",
+          "Fungicidas AH (Hidrocarburos Aromáticos)",
+          "Biphenyl, Chloroneb, Dicloran, Quintozene (PCNB), Tecnazene (TCNB), Tolclofos-methyl, Etridiazole",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          103,
+          "F4",
+          "Carbamatos",
+          "Iodocarb, Propamocarb, Prothiocarb",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          104,
+          "F8",
+          "Polienos",
+          "Natamycin (pimaricin)",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          105,
+          "F9",
+          "Fungicidas OSBPI (Inhibidores homólogo proteína unión oxisterol)",
+          "Oxathiapiprolin, Fluoxapiprolin",
+          "Fungicida",
+          "MEDIO-ALTO",
+          1,
+          1
+        ],
+        [
+          106,
+          "F10",
+          "Fragmento proteico polipéptido",
+          "Polypeptide ASFBIOF01-02",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          107,
+          "G1",
+          "Fungicidas DMI (Inhibidores DeMetilación) (SBI: Clase I)",
+          "Triforine, Pyrifenox, Pyrisoxazole, Fenarimol, Nuarimol, Imazalil, Oxpoconazole, Pefurazoate, Prochloraz, Triflumizole, Azaconazole, Bitertanol, Bromuconazole, Cyproconazole, Difenoconazole, Diniconazole, Epoxiconazole, Etaconazole, Fenbuconazole, Fluquinconazole, Flusilazole, Flutriafol, Hexaconazole, Imibenconazole, Ipconazole, Mefentrifluconazole, Metconazole, Myclobutanil, Penconazole, Propiconazole, Simeconazole, Tebuconazole, Tetraconazole, Triadimefon, Triadimenol, Triticonazole, Prothioconazole",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          108,
+          "G2",
+          "Aminas (morfolinas) (SBI: Clase II)",
+          "Aldimorph, Dodemorph, Fenpropimorph, Tridemorph, Fenpropidin, Piperalin, Spiroxamine",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          109,
+          "G3",
+          "Fungicidas KRI (Inhibidores CetoReductasa) (SBI: Clase III)",
+          "Fenhexamid, Fenpyrazamine",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          110,
+          "G4",
+          "Tiocarbamatos, Alilaminas",
+          "Pyributicarb, Naftifine, Terbinafine",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          111,
+          "H4",
+          "Poliozinas",
+          "Polyoxin",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          112,
+          "H5",
+          "Fungicidas CAA (Amidas Ácido Carboxílico)",
+          "Dimethomorph, Flumorph, Pyrimorph, Benthiavalicarb, Iprovalicarb, Valifenalate, Mandipropamid",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          113,
+          "I1",
+          "Fungicidas MBI-R (Inhibidores Biosíntesis Melanina - Reductasa)",
+          "Fthalide, Pyroquilon, Tricyclazole",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          114,
+          "I2",
+          "Fungicidas MBI-D (Inhibidores Biosíntesis Melanina - Deshidratasa)",
+          "Carpropamid, Diclocymet, Fenoxanil",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          115,
+          "I3",
+          "Fungicidas MBI-P (Inhibidores Biosíntesis Melanina - Poliquétido sintasa)",
+          "Tolprocarb",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          116,
+          "P 01",
+          "Relacionado salicilato (BTH)",
+          "Acibenzolar-S-methyl",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          117,
+          "P 02",
+          "Relacionado salicilato",
+          "Probenazole (también actividad antibacteriana y antifúngica)",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          118,
+          "P 03",
+          "Relacionado salicilato",
+          "Tiadinil, Isotianil",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          119,
+          "P 04",
+          "Elicitores polisacáridos",
+          "Laminarin",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          120,
+          "P 05",
+          "Elicitores antraquinona",
+          "Extracto de Reynoutria sachalinensis (giant knotweed)",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          121,
+          "P 06",
+          "Elicitores microbianos",
+          "Bacillus mycoides isolate J, Cell walls of Saccharomyces cerevisiae strain LAS117",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          122,
+          "P 07",
+          "Fosfonatos",
+          "Fosetyl-Al, Phosphorous acid and salts",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          123,
+          "P 08",
+          "Relacionado salicilato",
+          "Dichlobentiazox",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          124,
+          "M 01",
+          "Inorgánicos (electrófilos)",
+          "Copper (diferentes sales) - también aplica a complejos orgánicos de cobre",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          125,
+          "M 02",
+          "Inorgánicos (electrófilos)",
+          "Sulphur",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          126,
+          "M 03",
+          "Ditiocarbamatos y relativos (electrófilos)",
+          "Amobam, Ferbam, Mancozeb, Maneb, Metiram, Propineb, Thiram, Zinc thiazole, Zineb, Ziram",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          127,
+          "M 04",
+          "Ftalimidas (electrófilos)",
+          "Captan, Captafol, Folpet",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          128,
+          "M 05",
+          "Cloronitrilos (ftalonitriles) (mecanismo no especificado)",
+          "Chlorothalonil",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          129,
+          "M 06",
+          "Sulfamidas (electrófilos)",
+          "Dichlofluanid, Tolylfluanid",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          130,
+          "M 07",
+          "Bis-guanidinas (disruptores membrana, detergentes)",
+          "Guazatine, Iminoctadine",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          131,
+          "M 08",
+          "Triazinas (mecanismo no especificado)",
+          "Anilazine",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          132,
+          "M 09",
+          "Quinonas (antraquinonas) (electrófilos)",
+          "Dithianon",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          133,
+          "M 10",
+          "Quinoxalinas (electrófilos)",
+          "Chinomethionat / Quinomethionate",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          134,
+          "M 11",
+          "Maleimida (electrófilos)",
+          "Fluoroimide",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          135,
+          "M 12",
+          "Tiocarbamato (electrófilos)",
+          "Methasulfocarb",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          136,
+          "BM 01",
+          "Extractos vegetales",
+          "Extract from cotyledons of lupine plantlets (BLAD), Extract from Swinglea glutinosa, Extract from Melaleuca alternifolia (tea tree oil), Plant oils (mixtures): eugenol, geraniol, thymol",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          137,
+          "BM 02",
+          "Microbianos (cepas de microbios vivos o extracto, metabolitos)",
+          "Trichoderma spp. (T. atroviride, T. asperellum, T. harzianum, T. virens), Clonostachys spp. (C. rosea), Coniothyrium spp. (C. minitans), Hanseniaspora spp. (H. uvarum), Talaromyces spp. (T. flavus), Saccharomyces spp. (S. cerevisae), Bacillus spp. (B. amyloliquefaciens, B. subtilis, B. velezensis), Erwinia spp., Gluconobacter spp. (G. cerinus), Pseudomonas spp. (P. chlororaphis), Streptomyces spp. (S. griseovirides, S. lydicus)",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          138,
+          "BM 03",
+          "Metabolitos purificados de fuentes vegetales o microbianas, o versiones sintéticas",
+          "Cinnamaldehyde",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          139,
+          "U 06",
+          "Fenilacetamida",
+          "Cyflufenamid",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          140,
+          "U 12",
+          "Guanidinas",
+          "Dodine",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          141,
+          "U 13",
+          "Tiazolidina",
+          "Flutianil",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          142,
+          "U 14",
+          "Pirimidinona-hidrazonas",
+          "Ferimzone",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          143,
+          "U 16",
+          "4-quinolil-acetato",
+          "Tebufloquin",
+          "Fungicida",
+          "MEDIO",
+          2,
+          1
+        ],
+        [
+          144,
+          "U 17",
+          "Tetrazolil-oxima",
+          "Picarbutrazox",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          145,
+          "U 18",
+          "Antibiótico glucopiranosilo",
+          "Validamycin",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          146,
+          "27",
+          "Cianoacetamida-oxima",
+          "Cymoxanil",
+          "Fungicida",
+          "BAJO-MEDIO",
+          2,
+          1
+        ],
+        [
+          147,
+          "34",
+          "Ácidos ftalámicos",
+          "Tecloftalam",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          148,
+          "35",
+          "Benzotriazinas",
+          "Triazoxide",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          149,
+          "36",
+          "Bencenosulfonamidas",
+          "Flusulfamide",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          150,
+          "37",
+          "Piridazinonas",
+          "Diclomezine",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ],
+        [
+          151,
+          "NC",
+          "Diversos",
+          "Mineral oils, organic oils, inorganic salts, material of biological origin",
+          "Fungicida",
+          "BAJO",
+          3,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "plaga",
+      "schema": [
+        {
+          "column": "id_plaga",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "nombre",
+          "value": "TEXT"
+        },
+        {
+          "column": "estado",
+          "value": "INTEGER"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [
+          1,
+          "Antracnosis",
+          1
+        ],
+        [
+          2,
+          "Arañita roja",
+          1
+        ],
+        [
+          3,
+          "Barreno de la caña",
+          1
+        ],
+        [
+          4,
+          "Barreno menor de los granosa",
+          1
+        ],
+        [
+          5,
+          "Caballada",
+          1
+        ],
+        [
+          6,
+          "Caballada (gusano ejército)",
+          1
+        ],
+        [
+          7,
+          "Cercosporiosis",
+          1
+        ],
+        [
+          8,
+          "Chinche del maiz",
+          1
+        ],
+        [
+          9,
+          "Chupadera fungosa",
+          1
+        ],
+        [
+          10,
+          "Cigarrita del maíz",
+          1
+        ],
+        [
+          11,
+          "Cogollero",
+          1
+        ],
+        [
+          12,
+          "Gusano Cogollero",
+          1
+        ],
+        [
+          13,
+          "Gusano de tierra / Feltia experta",
+          1
+        ],
+        [
+          14,
+          "Gusano de tierra / Feltia sp",
+          1
+        ],
+        [
+          15,
+          "Gusano de tierra / Agrotis sp",
+          1
+        ],
+        [
+          17,
+          "Gusano de tierra / Copitarsia decolora",
+          1
+        ],
+        [
+          18,
+          "Gusano de tierra o cortador / Feltia spp",
+          1
+        ],
+        [
+          19,
+          "Gusano picador de la hoja",
+          1
+        ],
+        [
+          20,
+          "Gusano silbador",
+          1
+        ],
+        [
+          21,
+          "Hormiga arriera",
+          1
+        ],
+        [
+          22,
+          "Hormiga coqui",
+          1
+        ],
+        [
+          23,
+          "Hormiga loca",
+          1
+        ],
+        [
+          24,
+          "Langosta migratoria del Perú",
+          1
+        ],
+        [
+          25,
+          "Mancha necrotica del filodio",
+          1
+        ],
+        [
+          26,
+          "Mancha negra del maiz",
+          1
+        ],
+        [
+          27,
+          "Manchas de la hoja",
+          1
+        ],
+        [
+          28,
+          "Marchitez",
+          1
+        ],
+        [
+          29,
+          "Marchitez amarilla del arroz",
+          1
+        ],
+        [
+          30,
+          "Mazorquero",
+          1
+        ],
+        [
+          31,
+          "Mosca minadora del arroz",
+          1
+        ],
+        [
+          32,
+          "Mosquilla del ovario",
+          1
+        ],
+        [
+          33,
+          "Nemátodo de las lesiones",
+          1
+        ],
+        [
+          34,
+          "Nemátodo formador de nódulos",
+          1
+        ],
+        [
+          35,
+          "Palomilla de los cereales",
+          1
+        ],
+        [
+          36,
+          "Roya",
+          1
+        ],
+        [
+          37,
+          "Thrips",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "insumo",
+      "schema": [
+        {
+          "column": "descripcion",
+          "value": "TEXT"
+        },
+        {
+          "column": "name",
+          "value": "TEXT"
+        },
+        {
+          "column": "id_insumo",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "dosis_maxima",
+          "value": "TEXT"
+        },
+        {
+          "column": "dosis_minima",
+          "value": "TEXT"
+        },
+        {
+          "column": "tipo_medicion",
+          "value": "TEXT"
+        },
+        {
+          "column": "nivel_php_minimo",
+          "value": "TEXT"
+        },
+        {
+          "column": "nivel_php_maximo",
+          "value": "TEXT"
+        },
+        {
+          "column": "cuando_aplicar",
+          "value": "TEXT"
+        },
+        {
+          "column": "tiempo_espera",
+          "value": "TEXT"
+        },
+        {
+          "column": "id_grupo",
+          "value": "INTEGER"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [
+          "MANZATE 200 DF",
+          "MANZATE 200 DF",
+          1,
+          "3",
+          "2.5",
+          "HA",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "7 dias antes de cosechar",
+          126
+        ],
+        [
+          "CARVADIN 85",
+          "CARVADIN 85",
+          2,
+          "2.5",
+          "1.5",
+          "HA",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "5 dias antes de cosechar",
+          1
+        ],
+        [
+          "DIATREX 2.5 G",
+          "DIATREX 2.5 G",
+          3,
+          "10",
+          "8",
+          "HA",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "10 dias antes de cosechar",
+          2
+        ],
+        [
+          "MANZATE 200 WP",
+          "MANZATE 200 WP",
+          4,
+          "3",
+          "2.5",
+          "HA",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "7 dias antes de cosechar",
+          126
+        ],
+        [
+          "SUPRA",
+          "SUPRA",
+          5,
+          "3",
+          "2.5",
+          "HA",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "7 dias antes de cosechar",
+          126
+        ],[
+          "COMITE",
+          "COMITE",
+          6,
+          "2",
+          "2",
+          "DOSIS %",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "7 dias antes de cosechar",
+          32
+        ],[
+          "FUGAZ 4 F",
+          "FUGAZ 4 F",
+          7,
+          "1.5",
+          "1.5",
+          "HA",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "60 dias antes de cosechar",
+          1
+        ],[
+          "FUGAZ 480",
+          "FUGAZ 480",
+          8,
+          "1.5",
+          "1.5",
+          "HA",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "60 dias antes de cosechar",
+          1
+        ],[
+          "FURADAN 4F",
+          "FURADAN 4F",
+          9,
+          "1.5",
+          "1.5",
+          "HA",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "60 dias antes de cosechar",
+          1
+        ],[
+          "LANNATE 40 SP",
+          "LANNATE 40 SP",
+          10,
+          "0.9",
+          "0.8",
+          "HA",
+          "6",
+          "8",
+          "cuando vea los primeros insectos",
+          "21 dias antes de cosechar",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "insumo_plaga",
+      "schema": [
+        {
+          "column": "id_insumo_plaga",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "id_plaga",
+          "value": "INTEGER"
+        },
+        {
+          "column": "id_insumo",
+          "value": "INTEGER"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [1,1,1],
+        [2,7,1],
+        [3,25,1],
+        [4,3,2],
+        [5,3,3],
+        [6,1,4],
+        [7,1,5],
+        [8,7,4],
+        [9,25,4],
+        [10,7,5],
+        [11,12,5],
+        [12,25,5],
+        [13,2,6],
+        [14,12,3],
+        [15,3,7],
+        [16,3,8],
+        [17,3,9] ,
+        [18,3,10]         
+      ]
+    },
+    {
+      "name": "insumo_cultivo",
+      "schema": [
+        {
+          "column": "id_insumo_cultivo",
+          "value": "INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "column": "id_cultivo",
+          "value": "INTEGER"
+        },
+        {
+          "column": "id_insumo",
+          "value": "INTEGER"
+        }
+      ],
+      "indexes": [],
+      "triggers": [],
+      "values": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          3
+        ],
+        [
+          4,
+          1,
+          4
+        ],
+        [
+          5,
+          1,
+          5
+        ]
+          
+      ]
+    }
+  ]
+}

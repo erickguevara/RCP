@@ -1,1 +1,17 @@
 
+.tab-success {
+  color: var(--ion-color-success);
+
+  .custom-icon {
+    stroke: var(--ion-color-success);
+  }
+
+  ion-label {
+    color: var(--ion-color-success);
+  }
+
+  &:hover,
+  &.tab-selected {
+    background-color: rgba(var(--ion-color-success-rgb), 0.1);
+  }
+}

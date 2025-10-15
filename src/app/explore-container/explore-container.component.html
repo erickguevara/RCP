@@ -1,4 +1,58 @@
-<div id="container">
-  <strong>{{ name }}</strong>
-  <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-</div>
+<ion-header>
+  <ion-toolbar color="success">
+    <div class="header-content">
+      <ion-title>¡Bienvenido a AgroScan!</ion-title>
+      <p class="subtitulo">¿Qué necesitas hacer hoy?</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-card class="card-consulta" (click)="irAConsultaRapida()">
+    <ion-card-content>
+      <div class="card-header">
+        <ion-icon name="camera-outline" class="icono"></ion-icon>
+        <div class="text-prim">
+          <h2>Consulta Rápida</h2>
+          <p class="sub">Sin registro necesario</p>
+        </div>
+      </div>
+      <p class="descripcion">
+        Escanea la etiqueta de un producto y te digo cómo usarlo correctamente.
+      </p>
+      <div class="chips">
+        <ion-chip class="ionchips">Dosis</ion-chip>
+        <ion-chip class="ionchips">Advertencias</ion-chip>
+        <ion-chip class="ionchips">Compatibilidad</ion-chip>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card-cultivo"  (click)="ircrearcultivo()">
+    <ion-card-content>
+     
+      <div class="card-header">
+        <ion-icon name="leaf-outline" class="icono" color="success"></ion-icon>
+        <div class="text-prim">
+           <ion-badge color="success" class="badge">RECOMENDADO</ion-badge>
+          <h2>Gestiona Mi Cultivo</h2>
+          <p class="sub">Crea tu perfil gratis</p>
+        </div>
+      </div>
+      <p class="descripcion">
+        Registra tus parcelas y fumigaciones. Te aviso cuándo y qué aplicar en cada lote.
+      </p>
+      <div class="chips" color="success" >
+        <ion-chip>Varias parcelas</ion-chip>
+        <ion-chip>Recordatorios</ion-chip>
+        <ion-chip>Sin límites</ion-chip>
+      </div>
+    </ion-card-content>
+  </ion-card>
+   <ion-card class="card-consejo" color="warning" mode="ios">
+    <ion-card-content>
+      <ion-icon name="bulb-outline"></ion-icon>
+      <b>Consejo:</b> Empieza con una consulta rápida. Si te gusta, después creas tu perfil.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

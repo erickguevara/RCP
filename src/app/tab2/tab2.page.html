@@ -1,17 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-start">
+      AgroScan
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="person-circle-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div class="status-bar" *ngIf="data">
+    <ion-icon name="leaf-outline"></ion-icon>
+    <span> {{data.descripcion}} - {{data.formatoLargo}} </span>
+  </div>
+
+  <div class="main-content">
+    <h2>¿Cómo analizar la etiqueta?</h2>
+    <p>Elija una opción</p>
+
+    <ion-card button class="option-card" (click)="takePhoto()">
+      <ion-icon name="camera-outline" class="option-icon green"></ion-icon>
+      <ion-label>
+        <h3>Tomar Foto</h3>
+        <p>Use la cámara</p>
+      </ion-label>
+    </ion-card>
+
+    <ion-card button class="option-card outline" (click)="uploadImage()">
+      <ion-icon name="cloud-upload-outline" class="option-icon blue"></ion-icon>
+      <ion-label>
+        <h3>Subir Imagen</h3>
+        <p>Desde galería</p>
+      </ion-label>
+    </ion-card>
+  </div>
+
 </ion-content>
